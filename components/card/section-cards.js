@@ -12,13 +12,14 @@ const SectionCards = (props) => {
       <div className={clsx(styles.cardWrapper, shouldWrap && styles.wrap)}>
         {videos.map((video, idx) => {
           return (
-            <Link href={`/video/${video.id}`}>
+            <Link href={`/video/${video.id}`} key={video.id}>
               <Card
                 id={idx}
                 imgUrl={video.imgUrl}
                 size={size}
                 shouldScale={shouldScale}
-              />;
+              />
+              ;
             </Link>
           );
         })}
